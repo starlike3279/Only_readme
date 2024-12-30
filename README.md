@@ -184,8 +184,10 @@
 - https://docs.google.com/document/d/1uyWmLjlEamgZz6NCSunFm4GFJRT1n7Vc/edit?usp=sharing&ouid=114994970396661234746&rtpof=true&sd=true
 
 ## 와이어프레임
+- https://www.figma.com/design/IYYwOXqcTOrugz7xzfTeiS/Fund-Find?node-id=0-1&t=IdCUjNJuED7oRxFM-1
 
 ## DFD
+- https://www.figma.com/board/eFCqOQvEn6oGs17G7hX7LP/Fund-Find?node-id=0-1&t=ISUhGe4DFFLt1AXA-1
 
 
 # [4] 주요 기능
