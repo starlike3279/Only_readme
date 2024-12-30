@@ -207,8 +207,134 @@
 ## 기능 3
 
 # [6] 트러블 슈팅
-- 📧 dev.ujin518@gmail.com
-- 📋 [https://dev-ujin.github.io/contact](https://dev-ujin.github.io/contact)
+## 🔥 트러블 슈팅
+
+### 🚨 #1 
+### 🚧 Kodex ETF 200 종목 출력하는데 어려움
+
+A. 이슈 내역
+<br>
+Bearer 토큰을 발급 받아 Kodex 200 ETF 정보를 화면에 출력
+<br>
+
+## 😱 문제점 설명
+<br> 
+@GetMapping을 활용해 stock.html 파일에 랜더링 하는 과정에서 404 에러 발생하였습니다.
+<br>
+이는 경로나 오타 문제가 아니었습니다.
+<br>
+
+## 🛑 원인
+
+<br> 
+- 한국투자증권 open API 문서에 pom.xml 파일을 활용해야 한다는 이야기에 pom.xml 파일을 새로 만든 것이 원인이었음
+<br>
+- pom.xml의 파일 내용은 maven 형식으로 build.gradle과 충돌하여 발생한 문제였음
+<br>
+
+## 🚥 해결
+
+<br>
+- pom.xml 파일 형식을 gradle 형식으로 변경하여 build.gradle에 넣어 문제 해결
+<br>
+
+
+## 😱 문제점 설명
+
+postman에서 Bearer 토큰 발급에 문제 발생
+
+## 🛑 원인
+
+<br>
+- 한국투자증권에서 App Key와 App Secret Key를 발급 받아 사용하였는데, 형식에 맞지 않는 개행 문자가 삽입되어 발생
+<br>
+
+## 🚥 해결
+- 개행 문자를 삭제하여 해결하였음
+```
+
+## 🔥 트러블 슈팅
+
+### 🚨 #6  
+### 🚧 이슈 제목
+
+A. 이슈 내역
+
+<br>
+- Kodex 200 ETF 종목명 출력 문제
+<br>
+- Kodex 200 ETF 구성종목 출력 문제
+<br>
+
+## 😱 문제점 설명
+
+<br> 
+- Kodex 200 ETF 종목 명이 출력되지 않았음
+<br>
+
+## 🛑 원인
+
+<br> 
+- 한국투자증권 Open Api 문서에 설명된 것과 다른 엔드포인트와 tr_id 사용
+<br>
+
+## 🚥 해결
+
+<br>
+- 엔드포인트 : /uapi/etfetn/v1/quotations/inquire-price 사용
+- tr_id : FHPST02400000 사용
+<br>
+
+
+## 😱 문제점 설명
+
+<br>
+- Kodex 200 ETF 구성종목 출력 시 Postman에는 정상 출력 되지만, 로그를 찍어보면 output2 데이터가 출력되지 않았음 
+<br>
+
+## 🛑 원인
+
+<br>
+- output2는 output1과 다르게 배열 형태로 되어 있었던 것이 원인
+<br>
+
+## 🚥 해결
+- output2 데이터가 배열로 존재하는지 여부를 확인 후에 반복문을 통해 처리
+```
+
+## 🔥 트러블 슈팅
+
+### 🚨 #40 
+### 🚧 
+
+A. 이슈 내역
+<br>
+- ETF 상세정보 페이지 출력 시 css파일이 제대로 작동하지 않음
+<br>
+
+## 😱 문제점 설명
+<br> 
+-   ETF 상세정보 페이지(ETFDetail.jsx)를 출력 시 가독성이 떨어져 css 작업 수정 중 css가 제대로 작동하지 않은 문제 발생
+<br>
+
+## 🛑 원인
+
+<br> 
+- ETFList.jsx에 영향을 받아 수정한 css 코드가 작동하지 않는 문제
+<br>
+
+## 🚥 해결
+
+<br>
+- ETFDetail..jsx는 컴포넌트 단위로 여러 페이지에 사용하여 분리
+<br>
+<br>
+- 기존의 etfDetail.css 파일을 module 패키지를 만들어 ETFDetail.module.css 파일로 변경하고, 클래스명을 카멜케이스 형식으로 변경
+<br> 
+<br>
+- ETFDetail.jsx파일에 ETFDetail.module.css를 import한 후 HTML의 모든 클래스 명을 {styles.클래스명} 형식으로 변경하여 문제 해결
+<br>
+
 
 
 # [7] 개선 목표
