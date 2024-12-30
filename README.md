@@ -3,9 +3,6 @@
 <!--배지-->
 ![Repository Size][repository-size-shield] ![Issue Closed][issue-closed-shield]
 
-<!--프로젝트 대문 이미지-->
-![Project Title](img/.png)
-
 <!--목차-->
 # 목차
 - [[1] 프로젝트 설명](#1-프로젝트_설명)
