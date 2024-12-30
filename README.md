@@ -59,20 +59,43 @@
 
 ## 프로젝트 설명
 *강조하고 싶은 **주요 기능**이나 **차별성 있는 특징**을 적으세요.*
-- 최고 멋진 **README**를 쉽게 작성할 수 있도록 *이텔릭체*로 된 **가이드**를 제공
-- 
-- 뱃지로 **언어 옵션**을 제공
+- 기본적으로 제공하는 퀴즈를 기반으로 지식을 쌓을 수 있음
+- 사용자가 직접 원하는 대로 퀴즈를 생성하고 수정할 수 있음 
+- 투자성향분석 설문을 바탕으로 자신의 투자성향을 파악하고 맞춤형 ETF를 추천해줌
 
 ## 개발 기간
-***언어, 프레임워크, 주요 라이브러리**를 **버전**과 함께 나열하세요.*
-
-- [Maven](https://maven.apache.org/) 3.6.3
-- [MySQL](https://www.mysql.com/) 8.0
-- [Spring](https://spring.io/) 2.4.3
+2024.11.11 ~ 2024.12.20
 
 ## 개발 환경
+***언어, 프레임워크, 주요 라이브러리**를 **버전**과 함께 나열하세요.*
+
+* 환경 & IDE
+- 운영체제 : window 11
+- Intellij
+- Visual Studio Code
+- Dbeaver
+- Docker Desktop
+- Postman
+
+* Version
+- openjdk version: 17.0.13 
+- Gradle JVM: corretto-17(Amazon Corretto 17.0.13)
+- SpringBoot version: 3.3.5
+- spring.dependency-management plugin version: 1.1.6
+
+* DB
+- postgreSQL version -> 17.0
+- DB PORT: 5433
+- DB username: ff_dev
+- 데이터베이스 이름 : ff_dev
 
 ## 기술 스택
+- Version Control
+  Github, Git
+- Backend Technologies
+  Java, SpringBoot
+- FrontEnd Technologies
+  HTML5, CSS3, React, Fetch API, Swiper 라이브러리
 
 # [2] 팀원 & 역할분담
 *만약 운영체제에 따라 프로그램을 다르게 동작시켜야한다면, 운영체제별로 동작 방법을 설명하세요*
