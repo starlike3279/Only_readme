@@ -207,6 +207,82 @@
 ## 기능 3
 
 # [6] 트러블 슈팅
+
+## 장준규
+
+## 🔥 트러블 슈팅
+
+### 🚨 #15
+### 🚧 유저 로그인 , 회원가입 페이지가 프론트와 백연결과정에  문제가 생김
+
+A. 이슈 내역
+둘이 다루는 서버가 다르기 때문에 cros를  해줘야함 .
+이떄 기존에 배웠던 방식으로 문제해결을 시도하였으나 해결되지 않음 .
+
+<br>
+-
+<br>
+
+## 😱 문제점 설명
+```
+package com.example.global.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebSecurity
+public class WebMvcConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/api/**")
+                .allowedOrigins("https://cdpn.io", "http://localhost:5173")
+                .allowedMethods("*")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+    }
+}
+```
+
+해당 코드를 WebMvcConfig 파일을 만들어서 작성하여 local이 다른 서버들끼리 연결할수 있도록 배웠지만 해결되지 않음.
+
+<br> 
+-
+<br>
+
+## 🛑 원인
+이는 이전 버전의 스프링 프레임워크에서의 방법으로 지금버전에선 보안이 강화되어 추가로  
+```
+@Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedOrigin("http://localhost:5173"); // 허용할 출처 추가
+        configuration.addAllowedMethod("*"); // 모든 HTTP 메서드 허용
+        configuration.addAllowedHeader("*"); // 모든 요청 헤더 허용
+        configuration.setAllowCredentials(true); // 쿠키 및 인증 정보 포함 허용
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration); // 모든 경로에 CORS 정책 적용
+        return source;
+    }
+```
+    처럼 추가적인 cros 설정이 필요하고 security 설정 에 추가로 
+    `.cors(cors -> cors.configurationSource(corsConfigurationSource())) `로 crsf 설정도 축로 해줘야한다 .
+
+<br> 
+-
+<br>
+
+## 🚥 해결
+해당 코드를 추가하여 react와 인텔리제이 서버의 연결을 할 수 있게 되었다.
+<br>
+- 
+<br>
+
+
+## 한태호
+
 ## 🔥 트러블 슈팅
 
 ### 🚨 #1 
@@ -251,7 +327,6 @@ postman에서 Bearer 토큰 발급에 문제 발생
 
 ## 🚥 해결
 - 개행 문자를 삭제하여 해결하였음
-```
 
 ## 🔥 트러블 슈팅
 
@@ -300,7 +375,6 @@ A. 이슈 내역
 
 ## 🚥 해결
 - output2 데이터가 배열로 존재하는지 여부를 확인 후에 반복문을 통해 처리
-```
 
 ## 🔥 트러블 슈팅
 
